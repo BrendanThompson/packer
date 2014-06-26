@@ -78,6 +78,7 @@ usage() {
   echo '    --skipinteg     - when using makepkg, do not check md5s'
   echo '    --preview       - edit pkgbuild before sourcing'
   echo '    --mirror-list   - just sync the mirror list'
+  echo '    --self          - update packer'
   exit
 }
 
