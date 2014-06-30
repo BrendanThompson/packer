@@ -680,12 +680,11 @@ if [[ $option = update ]]; then
     cd $PACKER
     
     LOCAL=$(git rev-parse @)
-    REMOTE=$(git ls-remote https://github.com/BrendanThompson/packer.git refs/heads/master)
-    BASE=$(git merge-base @ @{u})
+    REMOTE=$(git ls-remote https://github.com/BrendanThompson/packer.git refs/heads/master | cut -f 1)
     
     if [ $LOCAL = $REMOTE ]; then
         echo "Up-to-date"
-    elif [ $LOCAL != $BASE ]; then
+    elif [ $LOCAL != $REMOTE ]; then
         git pull
     fi
   fi
