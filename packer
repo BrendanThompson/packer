@@ -62,7 +62,7 @@ usage() {
   echo '    install         - installs package'
   echo '    remove          - removes package'
   echo '    update          - updates all packages, also takes -uu and -yy options'
-  echo '    search          - searches for package'
+  echo '    search (find)   - searches for package'
   echo '    info            - outputs info for package'
   echo '    download        - download and extract aur tarball only'
   echo '    version         - get packer version'
@@ -521,7 +521,7 @@ packageargs=()
 while [[ $1 ]]; do
   case "$1" in
     'install') option=install ;;
-    'search') option=search ;;
+    'search' | 'find') option=search ;;
     'info') option=info ;;
     'update') option=update ; pacmanarg="-Su" ;;
     'remove' | 'uninstall') option=remove ;;
